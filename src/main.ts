@@ -1,6 +1,8 @@
+import { defineCustomElements } from '@ionic/pwa-elements/loader';
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router';
+import { Storage } from '@ionic/storage';
 
 import { IonicVue } from '@ionic/vue';
 
@@ -30,3 +32,10 @@ const app = createApp(App)
 router.isReady().then(() => {
   app.mount('#app');
 });
+defineCustomElements(window);
+
+
+
+ const store = new Storage();
+// await store.create();
+
